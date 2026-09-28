@@ -1,0 +1,12 @@
+{
+  "name": "split-bill",
+  "version": "1.0.0",
+  "description": "Split trip and dinner expenses among friends and get the fewest transfers.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test "test/*.test.js"",
+    "serve": "python3 -m http.server 8000"
+  }
+}

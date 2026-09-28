@@ -44,6 +44,13 @@ test('exact: 貪婪法確實不一定最少（構造反例）', () => {
   }
   assert.ok(found, '應該能找到貪婪法比精確法多的例子');
 });
+test('README 的反例：貪婪 4 筆、精確 3 筆', () => {
+  const n = nets([6, 5, -3, -3, -5]);
+  assert.equal(greedy(n).length, 4);
+  const e = exact(n);
+  assert.equal(e.length, 3);
+  assert.ok(verifyPlan(n, e));
+});
 test('exact: 超過 12 人丟錯，settle 自動改用貪婪', () => {
   const a = Array.from({ length: 13 }, (_, i) => (i % 2 ? -1 : 1));
   a[12] = 1; a[0] = 1; // 保證總和：重算
